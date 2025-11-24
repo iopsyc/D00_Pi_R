@@ -118,6 +118,65 @@
       font-size: .85rem;
       color: var(--muted);
     }
+
+    /* Estilos del diagrama de familiógrama */
+    .fam-diagram {
+      display: grid;
+      gap: 1.2rem;
+      margin-top: .8rem;
+    }
+    .fam-layer {
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 1rem;
+      background: radial-gradient(circle at top left, rgba(255,77,166,0.12), #080a15 55%);
+      position: relative;
+    }
+    .fam-layer:not(:last-child)::after {
+      content: "↓";
+      position: absolute;
+      left: 50%;
+      bottom: -1.1rem;
+      transform: translateX(-50%);
+      font-size: 1.1rem;
+      color: var(--accent);
+      opacity: .7;
+    }
+    .fam-layer-title {
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      color: var(--muted);
+      margin-bottom: .2rem;
+    }
+    .fam-layer-label {
+      font-size: .98rem;
+      font-weight: 600;
+      margin-bottom: .6rem;
+    }
+    .fam-nodes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+    }
+    .fam-node {
+      border-radius: 999px;
+      padding: .25rem .7rem;
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(3,4,10,0.7);
+      font-size: .8rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .fam-node strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+    .fam-footnote {
+      font-size: .82rem;
+      margin-top: .8rem;
+      color: var(--muted);
+    }
   </style>
 </head>
 <body>
@@ -338,6 +397,81 @@
       </ul>
     </section>
 
+    <!-- FAMILIÓGRAMA -->
+    <section class="card">
+      <div class="card-header">
+        <h2>8. Familiógrama (3 generaciones)</h2>
+        <span class="pill">Arquitectura del sistema familiar</span>
+      </div>
+
+      <p class="sub">8.1 Lectura estructural</p>
+      <p class="small">
+        El familiógrama se traduce aquí a un modelo de <strong>arquitectura de sistema</strong>,
+        donde cada generación funciona como una capa: infraestructura, middleware
+        y capa de aplicación. Cada integrante opera como un nodo con módulos y
+        protocolos relacionales heredados.
+      </p>
+
+      <div class="fam-diagram">
+        <!-- Capa 1 -->
+        <div class="fam-layer">
+          <div class="fam-layer-title">Capa 1 · Infraestructura</div>
+          <div class="fam-layer-label">Abuelos maternos (configuración de valores)</div>
+          <div class="fam-nodes">
+            <div class="fam-node"><strong>AXXX</strong> · abuelo materno · Autoridad</div>
+            <div class="fam-node"><strong>A2XXX</strong> · abuela materna · Obediencia femenina</div>
+            <div class="fam-node">Servicio_RolGeneroTradicional()</div>
+            <div class="fam-node">Servicio_Catequesis()</div>
+            <div class="fam-node">Servicio_SacrificioFemenino()</div>
+          </div>
+        </div>
+
+        <!-- Capa 2 -->
+        <div class="fam-layer">
+          <div class="fam-layer-title">Capa 2 · Middleware</div>
+          <div class="fam-layer-label">MXXX, PXXX y TXXX (distribución de mandatos)</div>
+          <div class="fam-nodes">
+            <div class="fam-node"><strong>MXXX</strong> · madre · Maestra de catecismo</div>
+            <div class="fam-node">Modulo_ServicioAlHombre()</div>
+            <div class="fam-node">Modulo_RepresionDeseo()</div>
+            <div class="fam-node"><strong>PXXX</strong> · padre · Modulo_Autoridad()</div>
+            <div class="fam-node">Modulo_DistanciaEmocional()</div>
+            <div class="fam-node"><strong>TXXX</strong> · tías/tíos · variaciones de patrón</div>
+          </div>
+        </div>
+
+        <!-- Capa 3 -->
+        <div class="fam-layer">
+          <div class="fam-layer-title">Capa 3 · Aplicación</div>
+          <div class="fam-layer-label">Familia nuclear de DXXX (ejecución del sistema)</div>
+          <div class="fam-nodes">
+            <div class="fam-node"><strong>DXXX</strong> · consultante</div>
+            <div class="fam-node">Modulo_ServicioConyugal()</div>
+            <div class="fam-node">Modulo_Somatizacion(dolor abdominal)</div>
+            <div class="fam-node">Modulo_ProyectoPropio(en conflicto)</div>
+
+            <div class="fam-node"><strong>EXXX</strong> · esposo</div>
+            <div class="fam-node">Modulo_AutoridadConyugal()</div>
+            <div class="fam-node">Modulo_NegocioFamiliar()</div>
+
+            <div class="fam-node"><strong>CXXX</strong> · 24a · perfeccionismo</div>
+            <div class="fam-node"><strong>EXXX</strong> · 19a · rebeldía funcional</div>
+            <div class="fam-node"><strong>EMXXX</strong> · 15a · adaptación silenciosa</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="fam-footnote">
+        El patrón central que atraviesa las tres capas puede resumirse como:
+        <strong>obediencia femenina + represión del deseo + servicio al hombre</strong>,
+        sostenido por la matriz religiosa y el mandato del sacrificio. La ansiedad de
+        DXXX aparece como un intento de mantener la homeostasis mientras emerge un
+        nuevo paradigma de autonomía.
+      </p>
+    </section>
+
   </main>
 </body>
+</html>
+
 </html>
